@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.10)
+
+project(ExpressionTransformerCompiler LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+# Include directories
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/Tests)
+
+# Test executable
+add_executable(tests
+  
+    Tests/TestScanner.cpp
+)
+
+# Enable testing
+enable_testing()
+add_test(NAME ExpressionTransformerTests COMMAND tests)
